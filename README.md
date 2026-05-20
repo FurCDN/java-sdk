@@ -1,4 +1,4 @@
-# FurCDN-API-Java
+# java-sdk
 
 [FurCDN](https://www.furcdn.us) 開放 API 的 Java SDK，使用 Lombok + Gson。
 
@@ -15,7 +15,7 @@ repositories {
 }
 
 dependencies {
-    implementation("com.github.FurCDN:FurCDN-API-Java:0.1.0")
+    implementation("com.github.FurCDN:java-sdk:0.1.0")
 }
 ```
 
@@ -28,7 +28,7 @@ repositories {
 }
 
 dependencies {
-    implementation 'com.github.FurCDN:FurCDN-API-Java:0.1.0'
+    implementation 'com.github.FurCDN:java-sdk:0.1.0'
 }
 ```
 
@@ -44,7 +44,7 @@ Maven：
 
 <dependency>
     <groupId>com.github.FurCDN</groupId>
-    <artifactId>FurCDN-API-Java</artifactId>
+    <artifactId>java-sdk</artifactId>
     <version>0.1.0</version>
 </dependency>
 ```
