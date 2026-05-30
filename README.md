@@ -70,6 +70,9 @@ public class Demo {
         client.uploadSsl(123,
             "-----BEGIN CERTIFICATE-----\n...",
             "-----BEGIN PRIVATE KEY-----\n...");
+
+        // 取得全部節點回源 IP（公開端點，不需 API key）。清單非固定，建議定期重取後同步源站防火牆白名單。
+        System.out.println(client.originIps());
     }
 }
 ```

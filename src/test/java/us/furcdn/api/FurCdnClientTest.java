@@ -72,6 +72,15 @@ class FurCdnClientTest {
     }
 
     @Test
+    void originIps() {
+        respond("/api/public/origin-ips", 200, "{\"ips\":[\"1.2.3.4\",\"5.6.7.8\"],\"count\":2}");
+        List<String> ips = client.originIps();
+        assertEquals(2, ips.size());
+        assertEquals("1.2.3.4", ips.get(0));
+        assertEquals("5.6.7.8", ips.get(1));
+    }
+
+    @Test
     void apiError() {
         respond("/api/v1/domains", 401, "{\"error\":\"未授權\"}");
         FurCdnException ex = assertThrows(FurCdnException.class, () -> client.listDomains());
