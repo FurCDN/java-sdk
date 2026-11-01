@@ -47,6 +47,22 @@ public class FurCdnClient {
         return gson.fromJson(obj, PurgeResult.class);
     }
 
+    /**
+     * 選擇性清除指定域名的快取：可只清掉指定的精確 URL、路徑前綴或 glob pattern。
+     * <p>
+     * 內容會在送出請求前先驗證（{@link PurgeOptions#validate()}），不合法時直接丟出
+     * {@link IllegalArgumentException}，不會發出任何 HTTP 請求。
+     * 要清除整個域名請用 {@link #purgeCache(long)}。
+     */
+    public PurgeResult purgeCache(long domainId, PurgeOptions options) {
+        if (options == null) {
+            throw new IllegalArgumentException("options 不可為 null；要清除整個域名請用 purgeCache(domainId)");
+        }
+        String body = gson.toJson(options.toJson());
+        JsonObject obj = request("POST", "/api/v1/domains/" + domainId + "/purge", body);
+        return gson.fromJson(obj, PurgeResult.class);
+    }
+
     /** 為指定域名上傳 PEM 格式憑證和私鑰，會關閉自動續約 */
     public void uploadSsl(long domainId, String cert, String key) {
         String body = gson.toJson(Map.of("cert", cert, "key", key));
