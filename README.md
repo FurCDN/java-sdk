@@ -15,7 +15,7 @@ repositories {
 }
 
 dependencies {
-    implementation("com.github.FurCDN:java-sdk:0.1.0")
+    implementation("com.github.FurCDN:java-sdk:0.3.0")
 }
 ```
 
@@ -28,7 +28,7 @@ repositories {
 }
 
 dependencies {
-    implementation 'com.github.FurCDN:java-sdk:0.1.0'
+    implementation 'com.github.FurCDN:java-sdk:0.3.0'
 }
 ```
 
@@ -45,7 +45,7 @@ Maven：
 <dependency>
     <groupId>com.github.FurCDN</groupId>
     <artifactId>java-sdk</artifactId>
-    <version>0.1.0</version>
+    <version>0.3.0</version>
 </dependency>
 ```
 
